@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Automatas II</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Semantico.html">Analizador Semantico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Sintactico.html">Analizador sintáctico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lexico.html">Analizador léxico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <h1>Analizador Semántico</h1>
+    <style>
+        /* Definir un estilo para el H1 con color rojo */
+        h1 {
+            color: purple;
+        }
+         </style>
+    <div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Lenguaje:</label>
+  </div>
+  <div class="col-auto">
+    <input  id="inputText" class="form-control" type="text" placeholder="" aria-label="default input example">
+  </div>
+  <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+      Debe ser con el siguiente formato[","].
+    </span>
+  </div>
+  <div class="col-auto">
+      <button  onclick="analizar()" type="button" class="btn btn-primary">Analizar</button>
+  </div>
+</div>
+    <p id="resultado"></p>
+
+    <script>
+       function analizar() {
+  const inputText = document.getElementById("inputText").value;
+
+  // Establecer el color del texto en rojo
+  document.getElementById("resultado").style.color = "green";
+
+  // Establecer el tamaño de la letra al doble
+  document.getElementById("resultado").style.fontSize = "2rem";
+
+  // Aquí puedes realizar análisis semánticos en 'inputText' y obtener el resultado.
+  // Por ejemplo, contar palabras, buscar palabras clave, etc.
+  // En este ejemplo, simplemente mostramos el texto analizado en el párrafo 'resultado'.
+  document.getElementById("resultado").innerText = inputText;
+
+  // Convertir el texto a mayúsculas
+  const resultadoMayusculas = document.getElementById("resultado").innerText.toUpperCase();
+
+  // Establecer el texto del párrafo 'resultado' al texto en mayúsculas
+  document.getElementById("resultado").innerText = "Texto analizado: " + resultadoMayusculas;
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
